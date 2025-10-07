@@ -449,6 +449,15 @@
             background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
         }
 
+        .footer-heart {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .footer-heart:hover {
+            transform: scale(1.2);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -515,7 +524,6 @@
                 <li><a href="#jobs">Jobs</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="post-job-btn" onclick="openPostJobModal()">Post a Job</a></li>
             </ul>
         </nav>
     </header>
@@ -569,7 +577,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Elegance Careers. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--accent-color);"></i> for excellence.</p>
+        
         <!-- Footer Banner Ad - Replace with your AdSense code -->
         <div class="ads-banner" style="margin-top: 2rem;">
             <ins class="adsbygoogle"
@@ -580,6 +588,7 @@
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
+		<p>&copy; 2025 Elegance Careers. All rights reserved. | Crafted with <a href="#" class="footer-heart" onclick="openPostJobModal()"><i class="fas fa-heart" style="color: var(--accent-color);"></i></a> for excellence.</p>
     </footer>
 
     <!-- Job Details Modal -->
@@ -623,11 +632,11 @@
                 </div>
                 <div class="form-group">
                     <label for="jobSalary">Salary Range</label>
-                    <input type="text" id="jobSalary" placeholder="e.g., $100,000 - $150,000" >
+                    <input type="text" id="jobSalary" placeholder="e.g., $100,000 - $150,000" required>
                 </div>
                 <div class="form-group">
                     <label for="jobDetails">Additional Details</label>
-                    <textarea id="jobDetails" ></textarea>
+                    <textarea id="jobDetails" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="jobWebsite">Company Website (for applications)</label>
@@ -668,7 +677,7 @@
                     </div>
                     <p class="job-location"><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
                     <p class="job-description">${job.description}</p>
-                    <p class="job-salary"><i class="fas fa-pound-sign"></i> ${job.salary}</p>
+                    <!-- <p class="job-salary"><i class="fas fa-pound-sign"></i> ${job.salary}</p> -->
                 </div>
             `).join('');
         }
