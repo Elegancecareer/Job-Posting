@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Careers - Premium Job Postings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google AdSense Script - Replace 'ca-pub-XXXXXXXXXXXXXXXX' with your actual AdSense Publisher ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #0f0f23;
+            --secondary-color: #1a1a3a;
+            --accent-color: #d4af37;
+            --text-light: #ffffff;
+            --text-dark: #2c2c54;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .post-job-btn {
+            background: linear-gradient(135deg, var(--accent-color), #f1c40f);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .post-job-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15, 15, 35, 0.85), rgba(26, 26, 58, 0.85)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1.2s ease;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.6rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1.2s ease 0.3s both;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-color), #f1c40f);
+            color: var(--primary-color);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            animation: fadeInUp 1.2s ease 0.6s both;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .jobs-section {
+            padding: 6rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filters select, .filters input {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            min-width: 200px;
+        }
+
+        .filters select:focus, .filters input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .job-card {
+            background: var(--text-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .job-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .job-card:hover {
+            transform: translateY(-12px) rotateX(2deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+            border-color: var(--accent-color);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .job-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            flex: 1;
+        }
+
+        .job-company {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .job-location {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .job-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .job-salary {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* AdSense Banner Styling */
+        .ads-banner {
+            margin: 3rem auto;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .ads-sidebar {
+            float: right;
+            width: 300px;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .ads-sidebar {
+                float: none;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--text-light);
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            animation: slideIn 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-color), #f1c40f);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-60px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+
+            .filters {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .filters select, .filters input {
+                min-width: 100%;
+                max-width: 300px;
+            }
+
+            .job-card {
+                padding: 2rem;
+            }
+
+            .modal-content {
+                margin: 2% auto;
+                width: 95%;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Elegance Careers</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="post-job-btn" onclick="openPostJobModal()">Post a Job</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Opportunity</h1>
+            <p>Premium job postings for discerning professionals seeking excellence.</p>
+            <a href="#jobs" class="cta-button">Explore Positions</a>
+        </div>
+    </section>
+
+    <!-- Leaderboard Banner Ad Above Jobs Section -->
+    <div class="ads-banner">
+        <!-- Replace with your AdSense Leaderboard (728x90) code -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <section id="jobs" class="jobs-section">
+        <h2 class="section-title">Featured Positions</h2>
+        <div class="filters">
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="tech">Technology</option>
+                <option value="finance">Finance</option>
+                <option value="design">Design</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search jobs...">
+        </div>
+        <div id="jobList">
+            <!-- Jobs will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- Sidebar Ad (for desktop) - Rectangle (300x250) -->
+    <div class="ads-sidebar">
+        <!-- Replace with your AdSense Rectangle (300x250) code -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:300px;height:250px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Elegance Careers. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--accent-color);"></i> for excellence.</p>
+        <!-- Footer Banner Ad - Replace with your AdSense code -->
+        <div class="ads-banner" style="margin-top: 2rem;">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </footer>
+
+    <!-- Job Details Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Post Job Modal -->
+    <div id="postJobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePostJobModal()">&times;</span>
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 2rem;">Post a New Job</h2>
+            <form id="postJobForm">
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobCompany">Company</label>
+                    <input type="text" id="jobCompany" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobLocation">Location</label>
+                    <input type="text" id="jobLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobCategory">Category</label>
+                    <select id="jobCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="tech">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="design">Design</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jobDescription">Description</label>
+                    <textarea id="jobDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jobSalary">Salary Range</label>
+                    <input type="text" id="jobSalary" placeholder="e.g., $100,000 - $150,000" >
+                </div>
+                <div class="form-group">
+                    <label for="jobDetails">Additional Details</label>
+                    <textarea id="jobDetails" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jobWebsite">Company Website (for applications)</label>
+                    <input type="url" id="jobWebsite" placeholder="https://www.example.com/careers">
+                </div>
+                <button type="submit" class="submit-btn">Post Job</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let jobs = JSON.parse(localStorage.getItem('jobs')) || [
+            {
+                id: 1,
+                title: "Senior Software Engineer",
+                company: "TechNova Inc.",
+                location: "New York, NY",
+                category: "tech",
+                description: "Lead development of cutting-edge applications using modern frameworks. Collaborate with cross-functional teams to deliver innovative solutions.",
+                salary: "$150,000 - $180,000",
+                details: "Full-time position with remote options. Requires 5+ years experience in React and Node.js. Benefits include health insurance, 401k, and unlimited PTO.",
+                website: "https://www.technova.com/careers"
+            },
+            
+        ];
+
+        function saveJobs() {
+            localStorage.setItem('jobs', JSON.stringify(jobs));
+        }
+
+        function renderJobs(jobsToRender = jobs) {
+            const jobList = document.getElementById('jobList');
+            jobList.innerHTML = jobsToRender.map(job => `
+                <div class="job-card" onclick="openModal(${job.id})">
+                    <div class="job-header">
+                        <h3 class="job-title">${job.title}</h3>
+                        <span class="job-company">${job.company}</span>
+                    </div>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
+                    <p class="job-description">${job.description}</p>
+                    <p class="job-salary"><i class="fas fa-pound-sign"></i> ${job.salary}</p>
+                </div>
+            `).join('');
+        }
+
+        function openModal(id) {
+            const job = jobs.find(j => j.id === id);
+            if (job) {
+                const applyButton = job.website ? 
+                    `<a href="${job.website}" target="_blank" class="cta-button">Apply Now <i class="fas fa-external-link-alt"></i></a>` : 
+                    `<button class="cta-button" onclick="closeModal()">Close</button>`;
+                document.getElementById('modalBody').innerHTML = `
+                    <h2>${job.title}</h2>
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p><strong>Description:</strong> ${job.description}</p>
+                    <p><strong>Salary:</strong> ${job.salary}</p>
+                    <p><strong>Details:</strong> ${job.details}</p>
+                    ${applyButton}
+                `;
+                document.getElementById('jobModal').style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('jobModal').style.display = 'none';
+        }
+
+        function openPostJobModal() {
+            document.getElementById('postJobModal').style.display = 'block';
+        }
+
+        function closePostJobModal() {
+            document.getElementById('postJobModal').style.display = 'none';
+            document.getElementById('postJobForm').reset();
+        }
+
+        document.getElementById('postJobForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newJob = {
+                id: Date.now(),
+                title: document.getElementById('jobTitle').value,
+                company: document.getElementById('jobCompany').value,
+                location: document.getElementById('jobLocation').value,
+                category: document.getElementById('jobCategory').value,
+                description: document.getElementById('jobDescription').value,
+                salary: document.getElementById('jobSalary').value,
+                details: document.getElementById('jobDetails').value,
+                website: document.getElementById('jobWebsite').value
+            };
+            jobs.unshift(newJob);
+            saveJobs();
+            renderJobs();
+            closePostJobModal();
+            alert('Job posted successfully!');
+        });
+
+        // Filter and search
+        document.getElementById('categoryFilter').addEventListener('change', (e) => {
+            const category = e.target.value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            let filteredJobs = jobs.filter(job => 
+                (!category || job.category === category) &&
+                (job.title.toLowerCase().includes(searchTerm) || job.company.toLowerCase().includes(searchTerm))
+            );
+            renderJobs(filteredJobs);
+        });
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const category = document.getElementById('categoryFilter').value;
+            const searchTerm = e.target.value.toLowerCase();
+            let filteredJobs = jobs.filter(job => 
+                (!category || job.category === category) &&
+                (job.title.toLowerCase().includes(searchTerm) || job.company.toLowerCase().includes(searchTerm))
+            );
+            renderJobs(filteredJobs);
+        });
+
+        // Modal close
+        window.addEventListener('click', (e) => {
+            const jobModal = document.getElementById('jobModal');
+            const postJobModal = document.getElementById('postJobModal');
+            if (e.target === jobModal) closeModal();
+            if (e.target === postJobModal) closePostJobModal();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initial render
+        renderJobs();
+    </script>
+</body>
+</html>
